@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{%static 'manage/manage.css' %}">
+</head>
+<body>
+    {%include 'manage/navbar.html'%}
+    <div class="form">
+        
+        <form class='inform' action="" method="post">
+            <h3>Form</h3>
+            {% csrf_token %}
+            
+            {{form.as_p}}
+        
+        
+        
+        
+        
+        
+        
+            <input class='formbuts' type="submit" value="submit">
+        </form>
+    </div>
+    
+</body>
+</html>

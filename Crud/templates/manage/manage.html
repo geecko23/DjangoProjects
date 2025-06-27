@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'manage/manage.css'%}">
+    <title>Student Management</title>
+</head>
+<body>
+    {% include 'manage/navbar.html'%}
+    <div class="tab">
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Branch</th>
+                    <th class="action">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for student in students %}
+                <tr>
+                    <td id="stid">{{ student.id }}</td>
+                    <td>{{ student.fname }}</td>
+                    <td>{{ student.lname }}</td>
+                    <td>{{ student.email}}</td>
+                    <td>{{ student.phone}}</td>
+                    <td>{{ student.branch}}</td>
+                    <td class="buts">
+                        <button class="button" type="button"><a href="">View</a></button>
+                        <button class="button" type="button"><a href="{%url 'update' student.id %}">Update</a></button>
+                        <button class="button" type="button"><a href="{%url 'delete' student.id %}">Remove</a></button>
+                    
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+
+    </div>
+   
+
+</body> 
+</html>
